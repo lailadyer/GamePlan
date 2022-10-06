@@ -30,11 +30,13 @@ namespace GamePlan
             var settings = MongoClientSettings.FromConnectionString(ConnectionString.getConnectionString());
             settings.ServerApi = new ServerApi(ServerApiVersion.V1);
             var client = new MongoClient(settings);
-            var dbList = client.ListDatabases().ToList();
+            var db = client.GetDatabase("gameplan");
+            var collection = db.GetCollection<BsonDocument>("game");
+            var games = collection.Find(_ => true).ToList();
 
-            foreach (var db in dbList)
+            foreach (var game in games)
             {
-                textBoxTest.Text += db + "\n";
+                textBoxTest.Text = game.ToString();
             }
         }
     }
