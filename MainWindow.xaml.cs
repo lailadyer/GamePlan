@@ -27,17 +27,9 @@ namespace GamePlan
         public MainWindow()
         {
             InitializeComponent();
-            var settings = MongoClientSettings.FromConnectionString(ConnectionString.getConnectionString());
-            settings.ServerApi = new ServerApi(ServerApiVersion.V1);
-            var client = new MongoClient(settings);
-            var db = client.GetDatabase("gameplan");
-            var collection = db.GetCollection<BsonDocument>("game");
-            var games = collection.Find(_ => true).ToList();
-
-            foreach (var game in games)
-            {
-                textBoxTest.Text = game.ToString();
-            }
+            var db = DbController.GetDb();
+            textBoxTest.Text = DbController.GetAll();
+ 
         }
     }
 }
