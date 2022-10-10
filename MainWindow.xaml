@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GamePlan"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
-        WindowStyle="None" ResizeMode="NoResize">
+        Title="GamePlan" Height="450" Width="800"
+        WindowStyle="None" ResizeMode="NoResize" Background="#FF66CBD7">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -28,8 +28,11 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            <Button x:Name="btnminimize" Grid.Column="6" Content="Minimize" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="16" BorderThickness="0,0,0,0" Click="btnminimize_Click"/>
+            <Button x:Name="btnmaximize" Grid.Column="7" Content="Maximize" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="16" BorderThickness="0,0,0,0" Click="btnmaximize_Click"/>
+            <Button x:Name="btnClose" Grid.Column="8" Content="Close" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="16" Click="btnClose_Click" BorderThickness="0,0,0,0"/>
         </Grid>
-        <TextBlock x:Name="textBoxTest" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="206" Width="586" FontSize="14" Grid.Row="1" Margin="107,86,0,0" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="textBoxTest" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="206" Width="586" FontSize="18" Grid.Row="1" Margin="107,86,0,0" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>
