@@ -12,7 +12,7 @@ namespace GamePlan
     {
         public static IMongoDatabase db = null;
 
-        public static IMongoDatabase GetDb()
+        public static void InitDb()
         {
             if (db == null)
             {
@@ -21,19 +21,13 @@ namespace GamePlan
                 var client = new MongoClient(settings);
                 db = client.GetDatabase("gameplan");
             }
-            return db;
         }
-        public static string GetAll()
+        public static List<BsonDocument> GetAll()
         {
             string result = "";
             var collection = db.GetCollection<BsonDocument>("game");
             var games = collection.Find(_ => true).ToList();
-
-            foreach (var game in games)
-            {
-                result += game.ToString();
-            }
-            return result;
+            return games;
         }
 
     }

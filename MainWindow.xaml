@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="GamePlan" Height="450" Width="800"
         WindowStyle="None" ResizeMode="NoResize" Background="#FF66CBD7">
-    <Grid>
+    <Grid x:Name="wrap" RenderTransformOrigin="0.307,0.511">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="189*"/>
+            <ColumnDefinition Width="611*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
@@ -32,7 +32,6 @@
             <Button x:Name="btnmaximize" Grid.Column="7" Content="Maximize" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="16" BorderThickness="0,0,0,0" Click="btnmaximize_Click"/>
             <Button x:Name="btnClose" Grid.Column="8" Content="Close" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="16" Click="btnClose_Click" BorderThickness="0,0,0,0"/>
         </Grid>
-        <TextBlock x:Name="textBoxTest" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="206" Width="586" FontSize="18" Grid.Row="1" Margin="107,86,0,0" Grid.ColumnSpan="2"/>
-
+        <ListBox x:Name="listGames" BorderThickness="0" Grid.Row="1" FontSize="16" Background="#FFFF98AA"/>
     </Grid>
 </Window>

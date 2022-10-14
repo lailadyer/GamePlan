@@ -27,9 +27,15 @@ namespace GamePlan
         public MainWindow()
         {
             InitializeComponent();
-            var db = DbController.GetDb();
-            textBoxTest.Text = DbController.GetAll();
- 
+            DbController.InitDb();
+            var games = DbController.GetAll();
+            List<string> titles = new List<string>();
+            foreach (var game in games)
+            {
+                titles.Add((string)game.GetValue("title"));
+            }
+            listGames.ItemsSource = titles;
+
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
