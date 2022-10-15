@@ -32,6 +32,7 @@
             <Button x:Name="btnmaximize" Grid.Column="7" Content="Maximize" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="16" BorderThickness="0,0,0,0" Click="btnmaximize_Click"/>
             <Button x:Name="btnClose" Grid.Column="8" Content="Close" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="16" Click="btnClose_Click" BorderThickness="0,0,0,0"/>
         </Grid>
-        <ListBox x:Name="listGames" BorderThickness="0" Grid.Row="1" FontSize="16" Background="#FFFF98AA"/>
+        <ListBox x:Name="listGames" BorderThickness="0" Grid.Row="1" FontSize="16" Background="#FFFF98AA" SelectionChanged="listGames_SelectionChanged"/>
+        <TextBlock x:Name="textBlockNotes" Grid.Column="1" HorizontalAlignment="Left" Margin="42,26,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="95" Width="158" Foreground="Black" Background="#FFFF98AA"/>
     </Grid>
 </Window>

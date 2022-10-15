@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 using Microsoft.VisualBasic;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -56,6 +57,18 @@ namespace GamePlan
             } else
             {
                 WindowState = WindowState.Maximized;
+            }
+        }
+
+        private void listGames_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string title = (string)listGames.SelectedItem;
+            BsonDocument game = DbController.GetOne(title);
+            BsonArray notes = (BsonArray)game.GetValue("notes");
+            textBlockNotes.Text = null;
+            foreach (BsonDocument note in notes)
+            {
+                textBlockNotes.Text += note.GetValue("body") + "\n";
             }
         }
     }
