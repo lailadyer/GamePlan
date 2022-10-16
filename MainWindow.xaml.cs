@@ -38,6 +38,11 @@ namespace GamePlan
             listGames.ItemsSource = titles;
 
         }
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
@@ -64,12 +69,7 @@ namespace GamePlan
         {
             string title = (string)listGames.SelectedItem;
             BsonDocument game = DbController.GetOne(title);
-            BsonArray notes = (BsonArray)game.GetValue("notes");
-            textBlockNotes.Text = null;
-            foreach (BsonDocument note in notes)
-            {
-                textBlockNotes.Text += note.GetValue("body") + "\n";
-            }
+            textBoxNotes.Text = (string)game.GetValue("notes");
         }
     }
 }
