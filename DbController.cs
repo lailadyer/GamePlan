@@ -44,5 +44,37 @@ namespace GamePlan
             return game;
         }
 
+        internal static void UpdateNote(string title, string newBody)
+        {
+            var collection = db.GetCollection<BsonDocument>("game");
+            collection.UpdateOne("{'title':'" + title + "'}",
+            "{$set: {'notes':'" + newBody + "'}}"
+            );
+        }
+
+        internal static void UpdateGameTitle(string oldTitle, string newTitle)
+        {
+            var collection = db.GetCollection<BsonDocument>("game");
+            collection.UpdateOne("{'title':'" + oldTitle + "'}",
+            "{$set: {'title':'" + newTitle + "'}}"
+            );
+        }
+
+        internal static void InsertOne(string title)
+        {
+            var collection = db.GetCollection<BsonDocument>("game");
+            BsonDocument newGame = new BsonDocument();
+            BsonElement element1 = new BsonElement("title", title);
+            BsonElement element2 = new BsonElement("notes", "");
+            newGame.Add(element1);
+            newGame.Add(element2);
+            collection.InsertOne(newGame);
+        }
+
+        internal static void DeleteOne(string title)
+        {
+            var collection = db.GetCollection<BsonDocument>("game");
+            collection.DeleteOne("{'title':'" + title + "'}");
+        }
     }
 }

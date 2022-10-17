@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GamePlan"
         mc:Ignorable="d"
-        Title="GamePlan" Height="450" Width="500"
-        WindowStyle="None" Background="#FF66CBD7"
+        Title="GamePlan" Height="450" Width="600"
+        WindowStyle="None" Background="White"
         ResizeMode="CanResizeWithGrip" AllowsTransparency="True" MouseDown="Window_MouseDown">
     <Grid x:Name="wrap" RenderTransformOrigin="0.307,0.511">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="189*" />
-            <ColumnDefinition Width="611*" />
+            <ColumnDefinition Width="250*" />
+            <ColumnDefinition Width="350*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
@@ -31,6 +31,21 @@
             <Button x:Name="btnClose" Grid.Column="5" Content="Close" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="16" Click="btnClose_Click" BorderThickness="0,0,0,0"/>
         </Grid>
         <ListBox x:Name="listGames" BorderThickness="0" Grid.Row="1" FontSize="16" Background="#FFFF98AA" SelectionChanged="listGames_SelectionChanged"/>
-        <TextBox x:Name="textBoxNotes" BorderThickness="0" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Text="" Foreground="Black" Background="#FFFF98AA" FontSize="16" Margin="10,0,0,0" AcceptsReturn="True"/>
+        <TextBox x:Name="textBoxNotes" BorderThickness="0" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Text="" Foreground="Black"
+                 Background="#FFFF98AA" FontSize="16" Margin="10,0,0,0" AcceptsReturn="True"/>
+        <Button x:Name="btnSaveNote" Grid.Column="1" Padding="6, 2" Content="Save" HorizontalAlignment="Left"
+                Margin="20,0,0,10" Grid.Row="1" VerticalAlignment="Bottom" FontSize="16" Background="White" BorderThickness="0,0,0,0" Click="btnSaveNote_Click"/>
+        <Button x:Name="btnNewGame" Grid.Column="0" Padding="6, 2" Content="New" HorizontalAlignment="Left"
+                Margin="192,0,0,10" Grid.Row="1" VerticalAlignment="Bottom" FontSize="16" Background="White" BorderThickness="0,0,0,0" Click="btnNewGame_Click"/>
+        <Button x:Name="btnRename" Grid.Column="0" Padding="6, 2" Content="Rename" HorizontalAlignment="Left"
+                Margin="10,0,0,10" Grid.Row="1" VerticalAlignment="Bottom" FontSize="16" Background="White" BorderThickness="0,0,0,0" Click="btnRename_Click"/>
+        <Button x:Name="btnDelete" Padding="6, 2" Content="Delete" HorizontalAlignment="Left"
+                Margin="109,0,0,10" Grid.Row="1" VerticalAlignment="Bottom" FontSize="16" Background="White" BorderThickness="0,0,0,0" Click="btnDelete_Click"/>
+        <TextBox x:Name="textBoxRename" BorderThickness="0" Grid.Row="1" TextWrapping="Wrap" Text=""
+                 Foreground="Black" Background="white" FontSize="16" Margin="10,352,0,50" VerticalAlignment="Bottom" Width="226" Height="20"
+                 HorizontalAlignment="Left" Visibility="Hidden" KeyDown="textBoxRenameOnKeyDownHandler" />
+        <TextBox x:Name="textBoxNew" BorderThickness="0" Grid.Row="1" TextWrapping="Wrap" Text=""
+                 Foreground="Black" Background="white" FontSize="16" Margin="10,352,0,50" VerticalAlignment="Bottom" Width="226" Height="20"
+                 HorizontalAlignment="Left" Visibility="Hidden" KeyDown="textBoxNewOnKeyDownHandler"/>
     </Grid>
 </Window>
