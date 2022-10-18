@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="GamePlan" Height="450" Width="600"
         WindowStyle="None" Background="White"
-        ResizeMode="CanResizeWithGrip" AllowsTransparency="True" MouseDown="Window_MouseDown">
+        ResizeMode="CanResizeWithGrip" AllowsTransparency="True" MouseDown="Window_MouseDown" BorderThickness="6">
     <Grid x:Name="wrap" RenderTransformOrigin="0.307,0.511">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250*" />
@@ -41,11 +41,11 @@
         <Button x:Name="btnSaveNote" Grid.Column="1" Padding="6, 2" Content="Save" HorizontalAlignment="Left"
                 Margin="20,0,0,10" Grid.Row="1" VerticalAlignment="Bottom" FontSize="16" Background="White" BorderThickness="0,0,0,0" Click="btnSaveNote_Click"/>
         <Button x:Name="btnNewGame" Grid.Column="0" Padding="6, 2" Content="New" HorizontalAlignment="Left"
-                Margin="192,0,0,10" Grid.Row="1" VerticalAlignment="Bottom" FontSize="16" Background="White" BorderThickness="0,0,0,0" Click="btnNewGame_Click"/>
+                Margin="160,0,0,10" Grid.Row="1" VerticalAlignment="Bottom" FontSize="16" Background="White" BorderThickness="0,0,0,0" Click="btnNewGame_Click"/>
         <Button x:Name="btnRename" Grid.Column="0" Padding="6, 2" Content="Rename" HorizontalAlignment="Left"
                 Margin="10,0,0,10" Grid.Row="1" VerticalAlignment="Bottom" FontSize="16" Background="White" BorderThickness="0,0,0,0" Click="btnRename_Click"/>
         <Button x:Name="btnDelete" Padding="6, 2" Content="Delete" HorizontalAlignment="Left"
-                Margin="109,0,0,10" Grid.Row="1" VerticalAlignment="Bottom" FontSize="16" Background="White" BorderThickness="0,0,0,0" Click="btnDelete_Click"/>
+                Margin="90,0,0,10" Grid.Row="1" VerticalAlignment="Bottom" FontSize="16" Background="White" BorderThickness="0,0,0,0" Click="btnDelete_Click"/>
         <TextBox x:Name="textBoxRename" BorderThickness="0" Grid.Row="1" TextWrapping="Wrap" Text=""
                  Foreground="Black" Background="white" FontSize="16" Margin="10,352,0,50" VerticalAlignment="Bottom" Width="226" Height="20"
                  HorizontalAlignment="Left" Visibility="Hidden" KeyDown="textBoxRenameOnKeyDownHandler" />
